@@ -4,11 +4,8 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class StartSceneScript : MonoBehaviour {
-    public void Begin()
-    {
+    public void Begin(){
         TKSceneManager.ChangeScene("Level1");
     }
-
-
-
+    
 }

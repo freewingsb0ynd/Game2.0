@@ -42,8 +42,7 @@ public class LevelTextManager : MonoBehaviour {
         isHintShown = !isHintShown;
     }
 
-    public void UnShowMainPanel()
-    {
+    public void UnShowMainPanel(){
         if (!isMainShown) mainPanel.gameObject.SetActive(true);
         else mainPanel.gameObject.SetActive(false);
         isMainShown = !isMainShown;
