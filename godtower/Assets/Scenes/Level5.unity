@@ -119,7 +119,6 @@ GameObject:
   - component: {fileID: 48623484}
   - component: {fileID: 48623483}
   - component: {fileID: 48623482}
-  - component: {fileID: 48623481}
   m_Layer: 5
   m_Name: Piece14
   m_TagString: Untagged
@@ -145,53 +144,6 @@ RectTransform:
   m_AnchoredPosition: {x: -42.5, y: -124}
   m_SizeDelta: {x: 76, y: 70}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &48623481
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 48623479}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1862395651, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Delegates:
-  - eventID: 5
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 48623482}
-          m_MethodName: Drag
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
-        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  - eventID: 13
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 48623482}
-          m_MethodName: BeginDrag
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
-        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  delegates: []
 --- !u!114 &48623482
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -203,6 +155,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96d4cdbc836aca94ba57d225cf9d0815, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_Delegates: []
+  delegates: []
 --- !u!114 &48623483
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -247,7 +201,6 @@ GameObject:
   - component: {fileID: 270314204}
   - component: {fileID: 270314203}
   - component: {fileID: 270314202}
-  - component: {fileID: 270314201}
   m_Layer: 5
   m_Name: Piece4
   m_TagString: Untagged
@@ -273,53 +226,6 @@ RectTransform:
   m_AnchoredPosition: {x: -27, y: 191.5}
   m_SizeDelta: {x: 46, y: 73}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &270314201
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 270314199}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1862395651, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Delegates:
-  - eventID: 5
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 270314202}
-          m_MethodName: Drag
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
-        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  - eventID: 13
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 270314202}
-          m_MethodName: BeginDrag
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
-        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  delegates: []
 --- !u!114 &270314202
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -331,6 +237,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96d4cdbc836aca94ba57d225cf9d0815, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_Delegates: []
+  delegates: []
 --- !u!114 &270314203
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -375,7 +283,6 @@ GameObject:
   - component: {fileID: 440200195}
   - component: {fileID: 440200194}
   - component: {fileID: 440200193}
-  - component: {fileID: 440200192}
   m_Layer: 5
   m_Name: Piece7
   m_TagString: Untagged
@@ -401,53 +308,6 @@ RectTransform:
   m_AnchoredPosition: {x: 48, y: 61}
   m_SizeDelta: {x: 71, y: 88}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &440200192
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 440200190}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1862395651, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Delegates:
-  - eventID: 5
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 440200193}
-          m_MethodName: Drag
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
-        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  - eventID: 13
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 440200193}
-          m_MethodName: BeginDrag
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
-        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  delegates: []
 --- !u!114 &440200193
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -459,6 +319,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96d4cdbc836aca94ba57d225cf9d0815, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_Delegates: []
+  delegates: []
 --- !u!114 &440200194
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -503,7 +365,6 @@ GameObject:
   - component: {fileID: 441790364}
   - component: {fileID: 441790363}
   - component: {fileID: 441790362}
-  - component: {fileID: 441790361}
   m_Layer: 5
   m_Name: Piece8
   m_TagString: Untagged
@@ -529,53 +390,6 @@ RectTransform:
   m_AnchoredPosition: {x: 218, y: 73}
   m_SizeDelta: {x: 89, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &441790361
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 441790359}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1862395651, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Delegates:
-  - eventID: 5
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 441790362}
-          m_MethodName: Drag
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
-        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  - eventID: 13
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 441790362}
-          m_MethodName: BeginDrag
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
-        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  delegates: []
 --- !u!114 &441790362
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -587,6 +401,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96d4cdbc836aca94ba57d225cf9d0815, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_Delegates: []
+  delegates: []
 --- !u!114 &441790363
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -631,7 +447,6 @@ GameObject:
   - component: {fileID: 595988652}
   - component: {fileID: 595988651}
   - component: {fileID: 595988650}
-  - component: {fileID: 595988649}
   m_Layer: 5
   m_Name: Piece5
   m_TagString: Untagged
@@ -657,53 +472,6 @@ RectTransform:
   m_AnchoredPosition: {x: 144, y: -164}
   m_SizeDelta: {x: 44, y: 51}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &595988649
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 595988647}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1862395651, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Delegates:
-  - eventID: 5
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 595988650}
-          m_MethodName: Drag
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
-        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  - eventID: 13
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 595988650}
-          m_MethodName: BeginDrag
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
-        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  delegates: []
 --- !u!114 &595988650
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -715,6 +483,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96d4cdbc836aca94ba57d225cf9d0815, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_Delegates: []
+  delegates: []
 --- !u!114 &595988651
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -854,7 +624,6 @@ GameObject:
   - component: {fileID: 668023707}
   - component: {fileID: 668023706}
   - component: {fileID: 668023705}
-  - component: {fileID: 668023708}
   m_Layer: 5
   m_Name: Piece1
   m_TagString: Untagged
@@ -891,6 +660,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96d4cdbc836aca94ba57d225cf9d0815, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_Delegates: []
+  delegates: []
 --- !u!114 &668023706
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -924,53 +695,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 668023703}
---- !u!114 &668023708
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 668023703}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1862395651, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Delegates:
-  - eventID: 5
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 668023705}
-          m_MethodName: Drag
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
-        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  - eventID: 13
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 668023705}
-          m_MethodName: BeginDrag
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
-        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  delegates: []
 --- !u!1 &693508089
 GameObject:
   m_ObjectHideFlags: 0
@@ -982,7 +706,6 @@ GameObject:
   - component: {fileID: 693508094}
   - component: {fileID: 693508093}
   - component: {fileID: 693508092}
-  - component: {fileID: 693508091}
   m_Layer: 5
   m_Name: Piece6
   m_TagString: Untagged
@@ -1008,53 +731,6 @@ RectTransform:
   m_AnchoredPosition: {x: 65, y: -73}
   m_SizeDelta: {x: 92, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &693508091
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 693508089}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1862395651, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Delegates:
-  - eventID: 5
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 693508092}
-          m_MethodName: Drag
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
-        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  - eventID: 13
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 693508092}
-          m_MethodName: BeginDrag
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
-        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  delegates: []
 --- !u!114 &693508092
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1066,6 +742,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96d4cdbc836aca94ba57d225cf9d0815, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_Delegates: []
+  delegates: []
 --- !u!114 &693508093
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1108,7 +786,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1055504920}
   m_Layer: 5
-  m_Name: Main5Panel
+  m_Name: Hint5Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1157,7 +835,6 @@ GameObject:
   - component: {fileID: 1188743141}
   - component: {fileID: 1188743140}
   - component: {fileID: 1188743139}
-  - component: {fileID: 1188743138}
   m_Layer: 5
   m_Name: Piece13
   m_TagString: Untagged
@@ -1183,53 +860,6 @@ RectTransform:
   m_AnchoredPosition: {x: -77, y: 73}
   m_SizeDelta: {x: 54, y: 97}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1188743138
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1188743136}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1862395651, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Delegates:
-  - eventID: 5
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1188743139}
-          m_MethodName: Drag
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
-        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  - eventID: 13
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1188743139}
-          m_MethodName: BeginDrag
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
-        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  delegates: []
 --- !u!114 &1188743139
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1241,6 +871,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96d4cdbc836aca94ba57d225cf9d0815, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_Delegates: []
+  delegates: []
 --- !u!114 &1188743140
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1285,7 +917,6 @@ GameObject:
   - component: {fileID: 1255753234}
   - component: {fileID: 1255753233}
   - component: {fileID: 1255753232}
-  - component: {fileID: 1255753231}
   m_Layer: 5
   m_Name: Piece11
   m_TagString: Untagged
@@ -1311,53 +942,6 @@ RectTransform:
   m_AnchoredPosition: {x: 178, y: -53}
   m_SizeDelta: {x: 55, y: 53}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1255753231
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1255753229}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1862395651, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Delegates:
-  - eventID: 5
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1255753232}
-          m_MethodName: Drag
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
-        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  - eventID: 13
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1255753232}
-          m_MethodName: BeginDrag
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
-        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  delegates: []
 --- !u!114 &1255753232
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1369,6 +953,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96d4cdbc836aca94ba57d225cf9d0815, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_Delegates: []
+  delegates: []
 --- !u!114 &1255753233
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1607,6 +1193,11 @@ Prefab:
       propertyPath: lvlNumber
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 114937189144888440, guid: 9e8ff716c9691444d9aa4b5774002209,
+        type: 2}
+      propertyPath: hints.Array.data[0]
+      value: 
+      objectReference: {fileID: 1055504919}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9e8ff716c9691444d9aa4b5774002209, type: 2}
   m_IsPrefabParent: 0
@@ -1688,7 +1279,6 @@ GameObject:
   - component: {fileID: 1743423099}
   - component: {fileID: 1743423098}
   - component: {fileID: 1743423097}
-  - component: {fileID: 1743423096}
   m_Layer: 5
   m_Name: Piece10
   m_TagString: Untagged
@@ -1714,53 +1304,6 @@ RectTransform:
   m_AnchoredPosition: {x: -183, y: -42.5}
   m_SizeDelta: {x: 58, y: 57}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1743423096
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1743423094}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1862395651, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Delegates:
-  - eventID: 5
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1743423097}
-          m_MethodName: Drag
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
-        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  - eventID: 13
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1743423097}
-          m_MethodName: BeginDrag
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
-        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  delegates: []
 --- !u!114 &1743423097
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1772,6 +1315,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96d4cdbc836aca94ba57d225cf9d0815, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_Delegates: []
+  delegates: []
 --- !u!114 &1743423098
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1816,7 +1361,6 @@ GameObject:
   - component: {fileID: 1766891259}
   - component: {fileID: 1766891258}
   - component: {fileID: 1766891257}
-  - component: {fileID: 1766891256}
   m_Layer: 5
   m_Name: Piece12
   m_TagString: Untagged
@@ -1842,53 +1386,6 @@ RectTransform:
   m_AnchoredPosition: {x: -146, y: -124}
   m_SizeDelta: {x: 80, y: 89}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1766891256
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1766891254}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1862395651, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Delegates:
-  - eventID: 5
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1766891257}
-          m_MethodName: Drag
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
-        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  - eventID: 13
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1766891257}
-          m_MethodName: BeginDrag
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
-        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  delegates: []
 --- !u!114 &1766891257
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1900,6 +1397,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96d4cdbc836aca94ba57d225cf9d0815, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_Delegates: []
+  delegates: []
 --- !u!114 &1766891258
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1944,7 +1443,6 @@ GameObject:
   - component: {fileID: 1828896822}
   - component: {fileID: 1828896821}
   - component: {fileID: 1828896820}
-  - component: {fileID: 1828896819}
   m_Layer: 5
   m_Name: Piece3
   m_TagString: Untagged
@@ -1970,53 +1468,6 @@ RectTransform:
   m_AnchoredPosition: {x: 247, y: -124}
   m_SizeDelta: {x: 57, y: 42}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1828896819
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1828896817}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1862395651, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Delegates:
-  - eventID: 5
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1828896820}
-          m_MethodName: Drag
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
-        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  - eventID: 13
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1828896820}
-          m_MethodName: BeginDrag
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
-        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  delegates: []
 --- !u!114 &1828896820
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2028,6 +1479,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96d4cdbc836aca94ba57d225cf9d0815, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_Delegates: []
+  delegates: []
 --- !u!114 &1828896821
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2072,7 +1525,6 @@ GameObject:
   - component: {fileID: 1953688508}
   - component: {fileID: 1953688507}
   - component: {fileID: 1953688506}
-  - component: {fileID: 1953688505}
   m_Layer: 5
   m_Name: Piece2
   m_TagString: Untagged
@@ -2098,53 +1550,6 @@ RectTransform:
   m_AnchoredPosition: {x: 163.5, y: 173}
   m_SizeDelta: {x: 105, y: 110}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1953688505
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1953688503}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1862395651, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Delegates:
-  - eventID: 5
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1953688506}
-          m_MethodName: Drag
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
-        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  - eventID: 13
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1953688506}
-          m_MethodName: BeginDrag
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
-        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  delegates: []
 --- !u!114 &1953688506
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2156,6 +1561,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96d4cdbc836aca94ba57d225cf9d0815, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_Delegates: []
+  delegates: []
 --- !u!114 &1953688507
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2200,7 +1607,6 @@ GameObject:
   - component: {fileID: 1998567601}
   - component: {fileID: 1998567600}
   - component: {fileID: 1998567599}
-  - component: {fileID: 1998567598}
   m_Layer: 5
   m_Name: Piece9
   m_TagString: Untagged
@@ -2226,53 +1632,6 @@ RectTransform:
   m_AnchoredPosition: {x: 102, y: 223}
   m_SizeDelta: {x: 70, y: 24}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1998567598
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1998567596}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1862395651, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Delegates:
-  - eventID: 5
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1998567599}
-          m_MethodName: Drag
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
-        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  - eventID: 13
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1998567599}
-          m_MethodName: BeginDrag
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
-        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  delegates: []
 --- !u!114 &1998567599
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2284,6 +1643,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96d4cdbc836aca94ba57d225cf9d0815, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_Delegates: []
+  delegates: []
 --- !u!114 &1998567600
 MonoBehaviour:
   m_ObjectHideFlags: 0

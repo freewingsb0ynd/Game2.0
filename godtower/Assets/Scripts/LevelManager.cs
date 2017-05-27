@@ -4,23 +4,21 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class LevelTextManager : MonoBehaviour {
+public class LevelManager : MonoBehaviour {
     public string lvlNumber;
     public string password;
     public string nextSceneName;
-    
     public Text levelText;
     public InputField passwordInput;
     public Button submitButton;
     public Text deniedText;
     public Button hintButton;
-    public GameObject hintPanel;
-    public GameObject mainPanel;
+    public List<GameObject> hints;
 
-    private bool isHintShown = false;
-    private bool isMainShown = true;
-
-
+    private int currentHintIndex;
+    private void Start(){
+        if (hints.Count > 1) hintButton.gameObject.SetActive(true); 
+    }
 
     // Update is called once per frame
     void Update () {
@@ -36,16 +34,14 @@ public class LevelTextManager : MonoBehaviour {
         else deniedText.gameObject.SetActive(true); 
     }
 
-    public void ShowHintPanel(){
-        if(!isHintShown) hintPanel.gameObject.SetActive(true);
-        else hintPanel.gameObject.SetActive(false);
-        isHintShown = !isHintShown;
-    }
+    public void OnHintButtonClicked() {
+        currentHintIndex = (currentHintIndex + 1) % hints.Count;
 
-    public void UnShowMainPanel(){
-        if (!isMainShown) mainPanel.gameObject.SetActive(true);
-        else mainPanel.gameObject.SetActive(false);
-        isMainShown = !isMainShown;
-    }
+        if (currentHintIndex == hints.Count - 1 || currentHintIndex == 0) hintButton.GetComponent<Transform>().Rotate(new Vector3(0, 0, -180));
 
+        for (int i =0; i < hints.Count; i++){
+            if (i == currentHintIndex) hints[i].gameObject.SetActive(true);
+            else hints[i].gameObject.SetActive(false);
+        }
+    }
 }

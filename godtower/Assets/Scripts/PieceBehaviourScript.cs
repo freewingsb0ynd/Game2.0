@@ -1,20 +1,39 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
-public class PieceBehaviourScript : MonoBehaviour {
-    private Vector2 savedPos;
-    private Vector3 dist;
+public class PieceBehaviourScript : EventTrigger {
+    private Vector2 mouseOffset;
+    
+    private void Start()
+    {
+        transform.localPosition = new Vector3(
+            Random.Range(-277.5f, 277.5f),
+            Random.Range(-194, 224),
+            0);
 
-    public void BeginDrag(){
-        dist = Camera.main.WorldToScreenPoint(transform.position);
-        savedPos.x = Input.mousePosition.x - dist.x;
-        savedPos.y = Input.mousePosition.y - dist.y;
+        GetComponent<Image>().alphaHitTestMinimumThreshold = 0.1f;
     }
 
-    public void Drag(){
-        transform.position = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x - savedPos.x, 
-                                                                        Input.mousePosition.y - savedPos.y,
-                                                                        dist.z));
+    public override void OnBeginDrag(PointerEventData eventData)
+    {
+        Vector3 worldMouse = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        Vector3 canvasMouse = transform.parent.InverseTransformPoint(worldMouse);
+
+        mouseOffset = canvasMouse - transform.localPosition;
+    }
+
+    public override void OnDrag(PointerEventData data)
+    {
+        Vector3 worldMouse = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        Vector3 canvasMouse = transform.parent.InverseTransformPoint(worldMouse);
+        Vector2 expectedPosition = (Vector2)canvasMouse - mouseOffset;
+
+        transform.localPosition = new Vector3(
+            Mathf.Clamp(expectedPosition.x, -277.5f, 277.5f),
+            Mathf.Clamp(expectedPosition.y, -294, 294),
+            0);
     }
 }
