@@ -26,6 +26,6 @@ public class AnimScript : MonoBehaviour {
             time += Time.deltaTime;
             yield return null;
         }
-        
+        transform.localPosition = targetPos;
     }
 }

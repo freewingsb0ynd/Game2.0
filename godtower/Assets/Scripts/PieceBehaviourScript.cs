@@ -11,7 +11,7 @@ public class PieceBehaviourScript : EventTrigger {
     {
         transform.localPosition = new Vector3(
             Random.Range(-277.5f, 277.5f),
-            Random.Range(-194, 224),
+            Random.Range(-194f, 224f),
             0);
 
         GetComponent<Image>().alphaHitTestMinimumThreshold = 0.1f;
@@ -19,21 +19,21 @@ public class PieceBehaviourScript : EventTrigger {
 
     public override void OnBeginDrag(PointerEventData eventData)
     {
-        Vector3 worldMouse = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        Vector3 canvasMouse = transform.parent.InverseTransformPoint(worldMouse);
+        Vector3 canvasMouse = transform.parent.InverseTransformPoint(
+                                    Camera.main.ScreenToWorldPoint(Input.mousePosition));
 
         mouseOffset = canvasMouse - transform.localPosition;
     }
 
     public override void OnDrag(PointerEventData data)
     {
-        Vector3 worldMouse = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        Vector3 canvasMouse = transform.parent.InverseTransformPoint(worldMouse);
-        Vector2 expectedPosition = (Vector2)canvasMouse - mouseOffset;
+        Vector3 canvasMouse = transform.parent.InverseTransformPoint(
+                                    Camera.main.ScreenToWorldPoint(Input.mousePosition));
+        Vector2 imgPos = (Vector2)canvasMouse - mouseOffset;
 
         transform.localPosition = new Vector3(
-            Mathf.Clamp(expectedPosition.x, -277.5f, 277.5f),
-            Mathf.Clamp(expectedPosition.y, -294, 294),
+            Mathf.Clamp(imgPos.x, -277.5f, 277.5f),
+            Mathf.Clamp(imgPos.y, -294f, 294f),
             0);
     }
 }
