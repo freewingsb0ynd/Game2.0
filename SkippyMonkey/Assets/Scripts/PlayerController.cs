@@ -8,10 +8,13 @@ using Lean.Touch;
 public class PlayerController : MonoBehaviour {
     public float playerRunSpeedX;
     public float playerJumpSpeedY;
+    public float score=0;
 
+    
     private static float SCREEN_HALF_WIDTH=320.0F;
     private Rigidbody2D rgBody;
     private Animator anim;
+
 
 	// Use this for initialization
 	void Start () {
@@ -51,5 +54,9 @@ public class PlayerController : MonoBehaviour {
         anim.SetBool("IsGrounded", true);
     }
 
+    public void Die()
+    {
+        Debug.Log("Die");
+    }
 
 }
