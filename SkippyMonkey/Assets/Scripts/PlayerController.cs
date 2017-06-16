@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using Lean.Touch;
 
 [RequireComponent(typeof(Rigidbody2D))]
@@ -8,13 +9,13 @@ using Lean.Touch;
 public class PlayerController : MonoBehaviour {
     public float playerRunSpeedX;
     public float playerJumpSpeedY;
-    public float score=0;
-
     
+    public Text scoreText;
+
+    private float score = 0;
     private static float SCREEN_HALF_WIDTH=320.0F;
     private Rigidbody2D rgBody;
     private Animator anim;
-
 
 	// Use this for initialization
 	void Start () {
@@ -52,6 +53,15 @@ public class PlayerController : MonoBehaviour {
     private void OnCollisionEnter2D(Collision2D collision)
     {
         anim.SetBool("IsGrounded", true);
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.tag == "Increase Score")
+        {
+            score += 1;
+            scoreText.text = "" + score;
+        }
     }
 
     public void Die()

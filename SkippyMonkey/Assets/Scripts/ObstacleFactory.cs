@@ -7,22 +7,19 @@ public class ObstacleFactory : MonoBehaviour {
 
     private int currentPlatformIndex = 0;
     private int screenHalfHeight;
-    private int screenHalfWidth;
     private int jumpHeight = 170;
     private int firstObsPos = -232;
     private int obsRangeX = 210;
-    private int highestObsPos;
     private List<GameObject> obsPool = new List<GameObject>();
+    private Transform[] childrenTransformList;
 
     // Use this for initialization
     void Start () {
         screenHalfHeight = (int) Camera.main.orthographicSize;
-        screenHalfWidth = (int) (screenHalfHeight * Camera.main.aspect) ;
 
         for (int obsPos = firstObsPos; obsPos < screenHalfHeight; obsPos += jumpHeight)
         {
             CreateNewObsIfNeeded();
-            highestObsPos = obsPos;
         }
         
     }
@@ -43,23 +40,23 @@ public class ObstacleFactory : MonoBehaviour {
 
     private GameObject GetNewObs()
     {
-        foreach (GameObject platform in obsPool)
+        foreach (GameObject obstacle in obsPool)
         {
-            if (!platform.activeInHierarchy)
+            if (!obstacle.activeInHierarchy)
             {
-                return platform;
+                return obstacle;
             }
         }
 
-        GameObject newPlatform = Instantiate(
+        GameObject newObstacle = Instantiate(
             obstaclePrefab,
             Vector3.zero,
             Quaternion.identity
         );
 
-        obsPool.Add(newPlatform);
+        obsPool.Add(newObstacle);
 
-        return newPlatform;
+        return newObstacle;
     }
 
     // Update is called once per frame
@@ -70,6 +67,11 @@ public class ObstacleFactory : MonoBehaviour {
         {
             if (obs.transform.position.y < Camera.main.transform.position.y - Camera.main.orthographicSize)
             {
+                childrenTransformList = obs.GetComponentsInChildren<Transform>(true);
+                foreach (Transform t in childrenTransformList)
+                {
+                    if (t.tag == "Increase Score") t.gameObject.SetActive(true);
+                }
                 obs.SetActive(false);
             }
         }
