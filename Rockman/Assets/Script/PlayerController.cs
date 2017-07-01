@@ -7,11 +7,13 @@ public class PlayerController : MonoBehaviour {
 
     private InputController inputController;
     private Vector2 velocity;
+    private Controller2D controller2D;
 
 
     private void Awake()
     {
         inputController = GetComponent<InputController>();
+        controller2D = GetComponent<Controller2D>();
     }
     // Use this for initialization
     void Start () {
@@ -27,6 +29,7 @@ public class PlayerController : MonoBehaviour {
     {
         velocity = new Vector2(inputController.Direction.x * movementSpeed, velocity.y + Physics2D.gravity.y + Time.fixedDeltaTime);
 
-        transform.position += (Vector3)(velocity * Time.fixedDeltaTime);
+        Vector2 actualVelocity = controller2D.Move(velocity * Time.fixedDeltaTime);
+        transform.position += (Vector3) actualVelocity;
     }
 }
