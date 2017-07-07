@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class ObstacleFactory : MonoBehaviour {
     public GameObject obstaclePrefab;
+    public int firstObsPosY;
+    public int obsSpaceY;
+    
 
     private int currentPlatformIndex = 0;
     private int screenHalfHeight;
-    private int jumpHeight = 170;
-    private int firstObsPos = -232;
     private int obsRangeX = 210;
     private List<GameObject> obsPool = new List<GameObject>();
     private Transform[] childrenTransformList;
@@ -17,7 +18,7 @@ public class ObstacleFactory : MonoBehaviour {
     void Start () {
         screenHalfHeight = (int) Camera.main.orthographicSize;
 
-        for (int obsPos = firstObsPos; obsPos < screenHalfHeight; obsPos += jumpHeight)
+        for (int obsPos = firstObsPosY; obsPos < screenHalfHeight; obsPos += obsSpaceY)
         {
             CreateNewObsIfNeeded();
         }
@@ -26,11 +27,11 @@ public class ObstacleFactory : MonoBehaviour {
 
     private void CreateNewObsIfNeeded()
     {
-        while (currentPlatformIndex * jumpHeight + firstObsPos < Camera.main.transform.position.y + Camera.main.orthographicSize)
+        while (currentPlatformIndex * obsSpaceY + firstObsPosY < Camera.main.transform.position.y + Camera.main.orthographicSize)
         {
             GameObject newPlatform = GetNewObs();
             newPlatform.transform.position = new Vector3(Random.Range(-obsRangeX, obsRangeX), 
-                                                        currentPlatformIndex * jumpHeight + firstObsPos,
+                                                        currentPlatformIndex * obsSpaceY + firstObsPosY,
                                                         0);
             newPlatform.SetActive(true);
 

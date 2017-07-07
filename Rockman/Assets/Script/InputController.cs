@@ -14,5 +14,6 @@ public class InputController : MonoBehaviour {
 	// Update is called once per frame
 	private void Update () {
         Direction = new Vector2(Input.GetAxis("Horizontal"), 0);
-	}
+        
+    }
 }
