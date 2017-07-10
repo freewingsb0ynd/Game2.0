@@ -2,15 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Controller2D : MonoBehaviour {
+public class Controller2D : MonoBehaviour
+{
     public LayerMask collideMask;
-    public int numRaycastHorizontal = 2;
-    public int numRaycastVertical = 2;
-    
-    private BoxCollider2D boxCollider2D;
+    public int numberOfRays;
+
+    private PlayerStatus playerStatus;
+    private BoxCollider2D boxCollider;
     private Bounds colliderBounds;
     private RaycastOrigins raycastOrigins;
-    
+
 
     private const int TOP_SIDE = 0;
     private const int BOTTOM_SIDE = 1;
@@ -18,29 +19,28 @@ public class Controller2D : MonoBehaviour {
     private const int RIGHT_SIDE = 3;
     private const float MIN_SPEED_THRESHOLD = 0.0001f;
 
-    private float horizontalRaySpacing;
-    private float verticalRaySpacing;
+    float stepBoundX;
+    float stepBoundY;
     private float skinWidth = 0.05f;
     // Use this for initialization
-    void Awake () {
-        boxCollider2D = GetComponent<BoxCollider2D>();
-        numRaycastHorizontal = numRaycastHorizontal < 2 ? 2 : numRaycastHorizontal;
-        numRaycastVertical = numRaycastVertical < 2 ? 2 : numRaycastVertical;
-        InitRaycastSpacing();
-    }
-    private void InitRaycastSpacing()
+    void Awake()
     {
-        colliderBounds = boxCollider2D.bounds;
+        boxCollider = GetComponent<BoxCollider2D>();
+        if (numberOfRays < 1) numberOfRays = 2;
+
+        colliderBounds = boxCollider.bounds;
         colliderBounds.Expand(-2 * skinWidth);
-        horizontalRaySpacing = (colliderBounds.max.x - colliderBounds.min.x) / (numRaycastHorizontal - 1);
-        verticalRaySpacing = (colliderBounds.max.y - colliderBounds.min.y) / (numRaycastVertical - 1);
+        stepBoundX = (colliderBounds.max.x - colliderBounds.min.x) / (numberOfRays - 1);
+        stepBoundY = (colliderBounds.max.y - colliderBounds.min.y) / (numberOfRays - 1);
+        playerStatus = new PlayerStatus();
     }
-	
-	private void UpdateColliderBound () {
-        colliderBounds = boxCollider2D.bounds;
+
+    private void UpdateColliderBound()
+    {
+        colliderBounds = boxCollider.bounds;
         colliderBounds.Expand(-2 * skinWidth);
         UpdateRaycastOrigins();
-	}
+    }
 
     private void UpdateRaycastOrigins()
     {
@@ -50,16 +50,14 @@ public class Controller2D : MonoBehaviour {
         raycastOrigins.bottomRight = new Vector2(colliderBounds.max.x, colliderBounds.min.y);
     }
 
-    private PlayerStatus CheckHitHorizontal(PlayerStatus playerStatus)
+    private Vector2 CheckHitHorizontal(Vector2 velocity)
     {
-        Vector2 velocity = playerStatus.velocity;
-
         int direction = velocity.x > 0 ? RIGHT_SIDE : LEFT_SIDE;
 
         float edgeToCheckHit = direction == RIGHT_SIDE ? colliderBounds.max.x : colliderBounds.min.x;
-        for (int i = 0; i < numRaycastVertical; i++)
+        for (int i = 0; i < numberOfRays; i++)
         {
-            RaycastHit2D hit = Physics2D.Raycast(new Vector2(edgeToCheckHit, raycastOrigins.bottomLeft.y + i * verticalRaySpacing),
+            RaycastHit2D hit = Physics2D.Raycast(new Vector2(edgeToCheckHit, raycastOrigins.bottomLeft.y + i * stepBoundY),
                                                  velocity.WithY(0),
                                                  Mathf.Abs(velocity.x) + skinWidth,
                                                  collideMask);
@@ -70,24 +68,32 @@ public class Controller2D : MonoBehaviour {
                 else playerStatus.isCollidingLeft = true;
 
                 velocity.x = (hit.distance - skinWidth) * Mathf.Sign(velocity.x);
-            }
-            
-        }
-        playerStatus.velocity = velocity;
 
-        return playerStatus;
+                if (Mathf.Abs(velocity.x) <= MIN_SPEED_THRESHOLD)
+                {
+                    velocity.WithX(0);
+                }
+            }
+
+        }
+        if (Mathf.Abs(velocity.x) > MIN_SPEED_THRESHOLD)
+        {
+            playerStatus.isCollidingRight = false;
+            playerStatus.isCollidingLeft = false;
+        }
+
+
+        return velocity;
     }
 
-    private PlayerStatus CheckHitVertical(PlayerStatus playerStatus)
+    private Vector2 CheckHitVertical(Vector2 velocity)
     {
-        Vector2 velocity = playerStatus.velocity;
-
         int direction = velocity.y > 0 ? TOP_SIDE : BOTTOM_SIDE;
 
         float edgeToCheckHit = direction == TOP_SIDE ? colliderBounds.max.y : colliderBounds.min.y;
-        for (int i = 0; i < numRaycastHorizontal; i++)
+        for (int i = 0; i < numberOfRays; i++)
         {
-            RaycastHit2D hit = Physics2D.Raycast(new Vector2(raycastOrigins.bottomLeft.x + i * horizontalRaySpacing, edgeToCheckHit),
+            RaycastHit2D hit = Physics2D.Raycast(new Vector2(raycastOrigins.bottomLeft.x + i * stepBoundX, edgeToCheckHit),
                                                  velocity.WithX(0),
                                                  Mathf.Abs(velocity.y) + skinWidth,
                                                  collideMask);
@@ -96,31 +102,41 @@ public class Controller2D : MonoBehaviour {
             {
                 if (direction == TOP_SIDE) playerStatus.isCollidingTop = true;
                 else playerStatus.isCollidingBottom = true;
-
                 velocity.y = (hit.distance - skinWidth) * Mathf.Sign(velocity.y);
-            }
-            
-        }
-        playerStatus.velocity = velocity;
 
-        return playerStatus;
+                if (Mathf.Abs(velocity.y) <= MIN_SPEED_THRESHOLD)
+                {
+                    velocity.WithY(0);
+                }
+            }
+
+        }
+        if (Mathf.Abs(velocity.y) > MIN_SPEED_THRESHOLD)
+        {
+            playerStatus.isCollidingBottom = false;
+            playerStatus.isCollidingTop = false;
+        }
+
+        return velocity;
+    }
+
+
+    private Vector2 AdjustVelocity(Vector2 velocity)
+    {
+        velocity = CheckHitHorizontal(velocity);
+        velocity = CheckHitVertical(velocity);
+
+
+        return velocity;
     }
 
     public PlayerStatus Move(Vector2 velocity)
     {
         UpdateColliderBound();
 
-        PlayerStatus result = new PlayerStatus {
-            velocity = velocity,
-            isCollidingBottom = false,
-            isCollidingLeft = false,
-            isCollidingRight = false,
-            isCollidingTop = false
-        };
+        playerStatus.velocity = AdjustVelocity(velocity);
 
-        result = CheckHitHorizontal(result);
-        result = CheckHitVertical(result);
-        return result;
+        return playerStatus;
     }
 }
 

@@ -1,8 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class InputController : MonoBehaviour {
+    public Action<float> OnMovePressed;
+
+    public Action OnJumpPressed;
+    public Action OnDashPressed;
+
+    public KeyCode jumpButton;
+    public KeyCode dashButton;
+
     public Vector2 Direction { get; private set; }
 
 
@@ -13,7 +22,21 @@ public class InputController : MonoBehaviour {
 	
 	// Update is called once per frame
 	private void Update () {
-        Direction = new Vector2(Input.GetAxis("Horizontal"), 0);
-        
+        if (OnMovePressed != null)
+        {
+            OnMovePressed(Input.GetAxisRaw("Horizontal"));
+        }
+
+        if (OnJumpPressed != null && Input.GetKeyDown(jumpButton))
+        {
+            OnJumpPressed();
+        }
+
+        if (OnDashPressed != null && Input.GetKeyDown(dashButton))
+        {
+            OnDashPressed();
+        }
+
     }
+    
 }
