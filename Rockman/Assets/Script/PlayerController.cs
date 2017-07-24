@@ -32,7 +32,6 @@ public class PlayerController : MonoBehaviour {
         controller2D = GetComponent<Controller2D>();
 
         isDenyingGravity = false;
-        faceDirection = 1;
 
         inputController.OnMovePressed += Move;
         inputController.OnJumpPressed += JumpIfPossible;
@@ -93,6 +92,7 @@ public class PlayerController : MonoBehaviour {
         if (!isDashing)
         {
             faceDirection = (int)Mathf.Sign(direction);            
+            
             velocity.x = direction * movementSpeed;
         }
     }
